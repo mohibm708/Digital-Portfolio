@@ -1,0 +1,22 @@
+/* this css file MUST be used in tandem with styleystuff.css, as it only contains the details that changed between sophomore and junior year */
+body {outline: #F0F 3px solid;}
+#corner {background-color: #F0F;}
+#corner > p::selection {color: #F0F;}
+.decor::selection {background-color: #F0F;}
+details {color: #F0F;}
+details[open] > summary {color: #F0F;}
+h1 {color: #F0F;}
+h1::selection {background-color: #F0F;}
+hr {border: #F0F 1px solid;}
+html {background: #400040;}
+h2 {color: #F0F;}
+h2::selection {background-color: #F0F;}
+i::selection {background-color: #F0F;}
+li::selection {background-color: #f0f;}
+p {color: #F0F;}
+p::selection {background-color: #F0F;}
+s::selection {background-color: #F0F;}
+sub::selection {background-color: #F0F;}
+sup::selection {background-color: #F0F;}
+u::selection {background-color: #F0F;}
+ul {color: #f0f;}

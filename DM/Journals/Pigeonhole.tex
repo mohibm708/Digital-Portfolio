@@ -1,0 +1,107 @@
+\documentclass{article}
+
+\usepackage{mathtools} % useful for paired delimiters
+\usepackage{amsfonts} % provides sets such as Z
+\usepackage[parfill]{parskip} % removes indents to match those after sections/subsections, thanks to https://tex.stackexchange.com/a/74173
+
+\title{The Pigeonhole Principle}
+\author{Mohibullah Meer}
+\date{September 1, 2023}
+
+% paired delimiter
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\begin{document}
+
+\maketitle
+
+\section{The Principles}
+
+The Pigeonhole Principle is an essential rule of discrete mathematics named after an easy-to-grasp situation:
+
+\begin{center}
+  A flock of pigeons settle in a collection of pigeonholes. If the amount of pigeons is more than that of the pigeonholes, there must be a pigeonhole with more than one pigeon within.
+\end{center}
+
+The merit of the principle, however, does not lie in its namesake example, but rather in how its generic structure allows it to be applied in multiple cases that vastly differ from avian housing issues, both in elements and implication.
+
+\subsection{The Pigeonhole Principle}
+
+The Pigeonhole Principle states:
+\begin{equation}
+  f: X \rightarrow Y, |X| > |Y| \Rightarrow \exists \; x_1, x_2 \in X: x_1 \neq x_2 \land f(x_1) = f(x_2)
+\end{equation}
+
+\begin{itemize}
+\item "$f: X \rightarrow Y$" --- Given a function $f$ that maps a member of $X$ to one member of $Y$
+\item "$|X| > |Y|$" --- Given that $X$ has more members than $Y$
+\item "$\Rightarrow \exists \; x_1 x_2 \in X$" --- Then there exist members of $X$, $x_1$ and $x_2$
+\item "$: x_1 \neq x_2 \land f(x_1) = f(x_2)$" --- That are distinct and mapped to the same member of $Y$
+\end{itemize}
+
+Although the equation may seem unrelated to the pigeon situation, an analogy can be drawn between the principle and any scenario that entails distributing one group into another. To clarify, the flock represents the set $X$, the pigeons individually represent the members $x_n$ (where $n$ is a integer), the collection of pigeonholes represent the set $Y$, and a pigeon's chosen hole represents $f(x_n)$.
+
+Typically, the variables of a formula tend to be its most confusing part, so for a demonstration, assume two sets of pigeons $P$ and pigeonholes $H$:\\
+
+$P=\{1, 2, 3, 4\}$
+
+$H=\{a, b, c\}$\\
+
+"$f: X \rightarrow Y$" can be interpreted as a pigeon flying into a pigeonhole, so since $|P|=4>|H|=3$, then there are some pigeons out of $\{1, 2, 3, 4\}$ who nested in the same pigeonhole out of $\{a, b, c\}$.
+
+\subsection{The Extended Pigeonhole Principles}
+
+It makes for an essential thing to keep in mind, but using the Pigeonhole Principle alone cannot solve every problem in a scenario beacuse it only indicates whether multiple members will share the same mapping. It doesn't provide the maximum number of identically mapped $x_n$ (in the case of the most even distribution possible), or how high $|X|$ must be to ensure that at least one $y$ has a certain number of $x$ mapped to it.
+
+This is where the Extended Pigeonhole Principle comes into play:
+\begin{gather}
+  f: X \rightarrow Y, k \in \mathbb{Z}, |X| > k \; * \; |Y| \Rightarrow \notag \\ \exists \; x_1, \ldots, x_{k+1} \in X: x_1 \neq \ldots \neq x_{k+1} \land f(x_1) = \ldots = f(x_{k+1})
+\end{gather}
+
+\begin{itemize}
+\item "$f: X \rightarrow Y$" --- Given a function $f$ that maps a member of $X$ to one member of $Y$
+\item "$k \in \mathbb{Z}$" --- Given an integer $k$
+\item "$|X| > k \; * \; |Y|$" --- Given that $X$ has more members than $Y$'s multiplied by $k$
+\item "$\Rightarrow \exists \; x_1, \ldots, x_{k+1} \in X$" --- Then there exist $k$ members of $X$
+\item "$: x_1 \neq \ldots \neq x_{k+1} \land f(x_1) = \ldots = f(x_{k+1})$" --- That are distinct and mapped to the same member of $Y$
+\end{itemize}
+
+The extended version of the principle incorporates an additional variable $k$ to quantify the "lowest maximum" ($k+1$) of members with the same mapping. There also exists an alternative, which is most useful when the main necessity is finding $k+1$, which is typically the case. Treating the expression as a variable, then, the Alternate Extended Pigeonhole Principle is:
+\begin{equation}
+  k+1 = \ceil*{\frac{|X|}{|Y|}}
+\end{equation}
+
+To demonstrate these two equations as well, assume another two sets of pigeons $P$ and pigeonholes $H$:\\
+
+$P=\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11\}$
+
+$H=\{a, b, c, d\}$\\
+
+Understanding that $|P|$ is larger than $|H|$, the next step is to find an integer $k$ such that $|P| > k \; * \; |H|$, which is $2$. Since the "lowest maximum" is $k+1$, the highest number of pigeons in a pigeonhole is at least $3$.
+
+Using the alternate version omits the step of finding $k$, instead concluding that the highest number of pigeons in a pigeonhole is at least:
+\[k+1=\ceil*{\frac{|P|}{|H|}}=\ceil*{\frac{11}{4}}=\ceil*{2.75}=3\]
+
+\section{Principle Representations in Swift}
+
+\begin{verbatim}
+import Foundation
+
+func pigeonhole(fromSet: [Any], toSet: [Any]) -> Bool {
+    return fromSet.count > toSet.count
+}
+
+func extendedPigeonhole(fromSet: [Any], toSet: [Any]) -> Int {
+    var k = 0
+    while fromSet.count > toSet.count * (k + 1) {
+        k += 1
+    }
+    return k + 1
+}
+
+func altExtendedPigeonhole(fromSet: [Any], toSet: [Any]) -> Int {
+    return Int(ceil(Double(fromSet.count) / Double(toSet.count)))
+}
+\end{verbatim}
+\end{document}

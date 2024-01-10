@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{mathtools, amsfonts, xcolor}
+\usepackage[parfill]{parskip}
+\title{Countable and Uncountable Sets Homework}
+\author{Mohibullah Meer}
+\date{November 3, 2023}
+% paired delimiter
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\begin{document}
+\maketitle
+\section*{7.1. Prove that there are infinitely many different sizes of infinite sets:}
+Assume for contradiction that all infinite sets are the same size. Thus, given $\mathbb{N}$ and $\mathbb{R}$, there should be a bijection from one to the other. In this example, $\mathbb{N}\rightarrow \mathbb{R}$ is used.
+
+Without exactly using the diagonalization argument, the only acceptable association between the sets is at $0\rightarrow 0$. After this, an assocation between $1\rightarrow 1$ fails to account for the reals between 0 and 1. This issue continues to exist, regardless of how small the value becomes:
+\begin{itemize}
+  \item $1\rightarrow 0.1$ --- fails to account for reals between 0 and 0.1
+  \item $1\rightarrow 0.01$ --- fails to account for reals between 0 and 0.01
+  \item $1\rightarrow 0.001$ --- fails to account for reals between 0 and 0.001
+  \item \ldots
+\end{itemize}
+As a result of this, there is no bijection that accounts for every real number, and associates it with a single natural number. The assumption stated that $\mathbb{N}$ and $\mathbb{R}$ are the same size, however---they need to share some bijection to be the same size. As a result of this contradiction, there exist different sizes of infinite sets.
+\section*{7.3. What is wrong with Johnny's argument?:}
+Using the diagonalization process on the list $T_0,T_1,\ldots$ will still yield a set unaccounted for in the new list. As a result, no matter how many times the indices are shifted to accomodate another set, there will be one unaccounted for in the function. 
+\section*{7.5. Which of the following are possible?:}
+\subsection*{7.5a: The set difference of two uncountable sets is countable.}
+This is possible.
+\begin{align*}
+  A&=\{x\in\mathbb{R}:x^2\neq2x\}\\
+  \mathbb{R}&-A=\{0,2\}
+\end{align*}
+\subsection*{7.5b: The set difference of two countably infinite sets is countably infinite.}
+This is possible.
+\begin{align*}
+  A&=\mathbb{Z}-\mathbb{N}\\
+  A&=\{x\in\mathbb{Z}:x<0\}
+\end{align*}
+A bijection $f:\mathbb{N}\rightarrow A$ can be represented as $f(x)=-(x+1)$, meaning that $A$ is countably infinite.
+\subsection*{7.5c: The power set of a countable set is countable.}
+This is possible when the set's cardinality is less than $\aleph_0$, beyond which the power set is uncountable.
+\subsection*{7.5d: The union of a collection of finite sets is countably infinite.}
+This is possible if the \textit{number} of finite sets is countably infinite. Suppose a countably infinite union of finite sets, the elements of which all exist in $\mathbb{N}$. If all these sets are distinct, the union would result in $\mathbb{N}$, a countably infinite set.
+\subsection*{7.5e: The union of a collection of finite sets is uncountable.}
+This also follows the same nature as 7.5d, meaning that---given a union of uncountable cardinality of distinct finite sets, containing elements in $\mathbb{R}$---an uncountable set would be the result (in this case being $\mathbb{R}$).
+\subsection*{7.5f: The intersection of two uncountable sets is empty.}
+This is possible.
+\begin{align*}
+  N&=\{x\in\mathbb{R}:x<0\}\\
+  P&=\{x\in\mathbb{R}:x>0\}\\
+  N&\cap P=\phi
+\end{align*}
+\section*{7.7.:}
+\subsection*{7.7a: Show that there are as many ordered pairs of reals between 0 and 1 as there are reals in that interval.}
+Theorem 7.2's truth indicates that for any infinite set $A$, $|A*A|=|A|$. Since $\mathbb{N}$ cannot map to either $\{x\in\mathbb{R}:0\leq x\leq1\}$ or $\{x\in\mathbb{R}:0\leq x\leq1\}^2$, they are the same size.
+\subsection*{7.7b: Extend the result of part (a) to give a bijection between pairs of nonnegative real numbers and nonnegative real numbers.}
+\section*{7.9. State whether each set is finite, countably infinite, or uncountable:}
+\subsection*{7.9a: The set of all books.}
+Each character can be represented as a natural number, meaning that a book can be represented as a sequence of natural numbers. As a result, Since there are an infinite number of combinations that can be mapped to $\mathbb{N}$, this set is countably infinite.
+\subsection*{7.9b: The set of all books of less than 500,000 symbols.}
+There is a finite number of combinations of symbols given a limit of 500,000. Thus, this set is finite.
+\subsection*{7.9c: The set of all finite sets of books.}
+Similarly to 7.9a, each finite set can be represented by a set of bits (in which 0 or 1 indicates whether or not a book is in the set), enumerated by $\mathbb{N}$. Therefore, this set is countably infinite.
+\subsection*{7.9d: The set of all irrational numbers greater than 0 and less than 1.}
+Given a set $A=\{x\in \mathbb{I}:0<x<1\}$, if one tries to make a bijection from $\mathbb{N}$ to $A$ to prove its countability as an infinite set, they would encounter a similar problem to the one in 7.1:
+\begin{itemize}
+  \item $0\rightarrow \sqrt{0.1}$ --- fails to account for irrationals between 0 and $\sqrt{0.1}$
+  \item $0\rightarrow \sqrt{0.001}$ --- fails to account for irrationals between 0 and $\sqrt{0.001}$
+  \item $0\rightarrow \sqrt{0.00001}$ --- fails to account for irrationals between 0 and $\sqrt{0.00001}$
+  \item \ldots
+\end{itemize}
+Since there exists no bijection from $\mathbb{N}$ to $A$, it is not countable and thus the set of all irrational numbers greater than 0 and less than 1 is uncountable.
+\subsection*{7.9e: The set of all sets of numbers that are divisible by 17.}
+The set of all multiples of 17 is countably infinite, by the function from $\mathbb{Z}\rightarrow\{x\in\mathbb{Z}:17|x\}$, $f(x)=17x$. All non-empty sets have more subsets than members, meaning that the set of all sets of numbers divisible by 17 is uncountable.
+\subsection*{7.9f: The set of all sets of even prime numbers.}
+The only even prime number is 2, so the set of all sets of even prime numbers is countable.
+\subsection*{7.9g: The set of all sets of powers of 2.}
+All powers of 2 can be defined by the function from $\mathbb{N}\rightarrow\{x:\sqrt{x}\in\mathbb{Z}\}$, $f(x)=x^2$, meaning that the set of powers of 2 is countably infinite. Since non-empty sets have more subsets than members, the set of all sets of powers of 2 is uncountable.
+\subsection*{7.9h: The set of all functions from $\mathbb{Q}$ to $\{0,1\}$.}
+\section*{7.11. Prove Theorem 7.3:}
+The union of sets includes only the elements in its unified sets. The individual sets all:
+\begin{itemize}
+\item do not contain a number of elements that makes them finite
+\item do not contain a number of elements that makes them uncountable
+\item contain a number of elements that makes them countably infinite
+\end{itemize}
+As a result, the union of countably many countably infinite sets does not contain a number of element that makes them finite or uncountable---it must be countably infinite.
+\end{document}

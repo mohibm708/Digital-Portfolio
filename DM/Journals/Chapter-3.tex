@@ -1,0 +1,161 @@
+\documentclass{article}
+\usepackage{mathtools, amsfonts, xcolor}
+\usepackage[parfill]{parskip}
+\title{Chapter 3 Homework}
+\author{Mohibullah Meer}
+\date{September 29, 2023}
+% paired delimiter
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\begin{document}
+\maketitle
+\section*{3.1: Find a closed form expression for the expression on page 26, $\sum_{i=0}^{n-1}(2i+1)$.}
+\begin{align*}
+  \sum_{i=0}^{n-1}(2i+1)&=n^2
+\end{align*}
+Base case---$n_0=0$:
+\begin{align*}
+  \sum_{i=0}^{-1}(2i+1)&=0^2\\
+  0&=0
+\end{align*}
+Induction hypothesis: Suppose that given $n\geq0$, $\sum_{i=0}^{n-1}(2i+1)=n^2$ is true.
+
+Induction step---$n+1$:
+\begin{align*}
+  \sum_{i=0}^{n}(2i+1)&=(n+1)^2\\
+  \sum_{i=0}^{n-1}(2i+1)+(2n+1)&=(n+1)^2\\
+  \sum_{i=0}^{n-1}(2i+1)+(2n+1)&=n^2+2n+1\\
+  \sum_{i=0}^{n-1}(2i+1)&=n^2
+\end{align*}
+Since the final expression is equal to that expressed in the induction hypothesis, it is true. Thus, $\sum_{i=0}^{n-1}(2i+1)=n^2$ is a valid proposition.
+\section*{3.3: Prove the Extended Pigeonhole Principle (page 5) by induction.}
+The size of $X$ will be the induction variable for this problem.
+
+Base case---$n_0=2$:
+
+Under the circumstances of $|X|>k|Y|$ and a function $f$ from $X$ to $Y$, $|Y|=1$ and $k=1$. Because $f(x)\in Y$ for each $x\in X$ and $Y$ can hold only 1 element since it is smaller than $X$, there must be at least $k+1$, or 2, distinct elements of $X$ mapped to the same element of $Y$.
+
+Induction hypothesis: Suppose that given $n\geq2$ and finite sets $X$ and $Y$ such that $|X|>k|Y|$ and $|X|=n$, if $f: X\rightarrow Y$, there are distinct elements $x_1, x_2, \ldots, x_{k+1}\in X$ such that $f(x_1)=f(x_2)=\ldots=f(x_{k+1})$.
+
+Induction step---$n+1$:
+
+In the first pick of any element $x\in X$, there exist two cases:
+\begin{enumerate}
+\item There are at least $k$ more distinct elements in $X$ that have an identical $f(x)$. The proof ends here, then.
+\item There are not at least $k$ more distinct elements in $X$ that have an identical $f(x)$.
+\end{enumerate}
+In the second case, by removing that $x$ and its $f(x)$ from $X$ (creating $X'$) and $Y$ (creating $Y'$), $|X'|=n$, meaning that the induction hypothesis can be applied. There are distinct elements $x_1', x_2', \ldots, x_{k+1}'\in X'$ such that $f(x_1')=f(x_2')=\ldots=f(x_{k+1}')$, and since $X'\in X$, the same applies to $X$.
+\section*{3.5: Prove by induction that for any $n\geq0$, $\sum_{i=0}^ni^2=\frac{n(n+1)(2n+1)}{6}$.}
+Base case---$n_0=0$:
+\begin{align*}
+  \sum_{i=0}^0i^2&=\frac{0(0+1)(2(0)+1)}{6}\\
+  0&=0
+\end{align*}
+Induction hypothesis: Suppose that given $n\geq0$, $\sum_{i=0}^ni^2=\frac{n(n+1)(2n+1)}{6}$.
+\begin{align*}
+  \frac{n(n+1)(2n+1)}{6}=\frac{2n^3+3n^2+n}{6}
+\end{align*}
+Induction step---$n+1$:
+\begin{align*}
+  \sum_{i=0}^{n+1}i^2&=\frac{(n+1)((n+1)+1)(2(n+1)+1)}{6}\\
+  \sum_{i=0}^{n}i^2+(n+1)^2&=\frac{(n+1)(n+2)(2n+3)}{6}\\
+  \sum_{i=0}^{n}i^2+(n+1)^2&=\frac{2n^3+9n^2+13n+6}{6}\\
+  \frac{2n^3+3n^2+n}{6}+(n+1)^2&=\frac{2n^3+9n^2+13n+6}{6}\\
+  (n+1)^2&=\frac{6n^2+12n+6}{6}\\
+  n^2+2n+1&=n^2+2n+1
+\end{align*}
+Thus for any $n\geq0$, $\sum_{i=0}^ni^2=\frac{n(n+1)(2n+1)}{6}$.
+\section*{3.7: Prove by induction that for any $n\geq0$, $\sum_{i=0}^ni^3=\left(\sum_{i=0}^ni\right)^2$.}
+Base case---$n_0=0$:
+\begin{align*}
+  \sum_{i=0}^0i^3&=\left(\sum_{i=0}^0i\right)^2\\
+  0^3&=(0)^2\\
+  0&=0
+\end{align*}
+Induction hypothesis: Suppose that given $n\geq1$, $\sum_{i=0}^ni^3=\left(\sum_{i=0}^ni\right)^2$.
+
+Induction step---$n+1$:
+\begin{align*}
+  \sum_{i=0}^{n+1}i^3&=\left(\sum_{i=0}^{n+1}i\right)^2\\
+  \sum_{i=0}^{n}i^3+(n+1)^3&=\left(\sum_{i=0}^{n+1}i\right)^2\\
+  \left(\sum_{i=0}^{n}i\right)^2+(n+1)^3&=\left(\sum_{i=0}^{n+1}i\right)^2\\
+  \left(\sum_{i=0}^{n}i\right)^2+(n+1)^3&=\left(\sum_{i=0}^ni+(n+1)\right)^2\\
+  \left(\sum_{i=0}^{n}i\right)^2+(n+1)^3&=\left(\sum_{i=0}^ni\right)^2+2(n+1)\sum_{i=0}^ni+(n+1)^2\\
+  (n+1)^3&=2(n+1)\sum_{i=0}^ni+(n+1)^2\\
+  (n+1)^2&=2\sum_{i=0}^ni+(n+1)\\
+  n^2+2n+1-(n+1)&=2\sum_{i=0}^ni\\
+  n^2+n&=2\sum_{i=0}^ni
+\end{align*}
+Thus for any $n\geq0$, $\sum_{i=0}^ni^3=\left(\sum_{i=0}^ni\right)^2$.
+\section*{3.9: What is the flaw in the "proof" that all horses are the same color?}
+In the induction step, if a group of 2 horses is being tested (which satisfies $n+1\geq2$), although two subgroups can be made, there exists no common horse between the two subgroups. It is impossible to assert that they will always be the same color.
+\section*{3.11: Prove the following about the Thue sequence:}
+\subsection*{3.11a: For every $n\geq1$, $T_{2n}$ is a palindrome, that is, a string that reads the same in both directions.}
+Base case---$n_0=1$:
+\begin{align*}
+  T_2=0110
+\end{align*}
+$T_{2n_0}$ is a palindrome.
+
+Induction hypothesis: Suppose that given $n\geq1$, $T_{2n}$ is a palindrome.
+
+Induction step---$n+1$:
+
+One way of proving that $T_{2(n+1)}$ is a palindrome is by simplifying the string of $T_{2n}$ and its complement as \textcolor{red}{$a$} and \textcolor{blue}{$b$} respectively.
+\begin{align*}
+  T_{2n}&=\textcolor{red}{a}\\
+  T_{2(n+0.5)}&=\textcolor{red}{a}\textcolor{blue}{b}\\
+  T_{2(n+1)}&=\textcolor{red}{a}\textcolor{blue}{b}\textcolor{blue}{b}\textcolor{red}{a}
+\end{align*}
+Since $T_{2n}$ is a palindrome and this simplified version of $T_{2(n+1)}$ reads as a palindrome, then $T_{2(n+1)}$ itself is a palindrome, and thus for every $n\geq1$, $T_{2n}$ is a palindrome.
+\subsection*{3.11b: In the infinite Thue bit string $t_0t_1\ldots$, if we replace $0$ with $01$ and $1$ with $10$ simultaneously, the result is the infinite Thue bit string again.}
+The method I take for my solution revolves around the nature of an infinitely long string. In any string where one bit is replaced with multiple, the only case where the phrase "extra bits" is irrelevant is in the case of an infinite string, since those bits are still part of the length of the string. As a result, proving this by induction suggests that the only relevant bits can be the ones that are contained within the length of the original string.
+
+Base case---$T_0$:
+\begin{align*}
+  &0\\
+  &\textcolor{green}{0}1
+\end{align*}
+Induction hypothesis: Suppose that given $n\geq0$, applying this rule of replacement to $T_n$ will create a string that starts with the same bits.
+
+Induction step---$T_{n+1}$:
+
+Similarly to 3.11a, one way to go about this is by simplifying the strings of $T_n$ and $T_{n+1}$ as \textcolor{red}{$a$} and $\textcolor{red}{a}\textcolor{blue}{b}$, with \textcolor{red}{$a$} and \textcolor{blue}{$b$} being complements of one another.
+
+Another thing to note is that, indicated by the base case, this replacement rule actually produces the very next iteration of the inputted string.
+\begin{align*}
+  \textcolor{red}{a}&\rightarrow \textcolor{red}{a}\textcolor{blue}{b}\\
+  \textcolor{blue}{b}&\rightarrow \textcolor{blue}{b}\textcolor{red}{a}\\
+  T_n&=\textcolor{red}{a}\\
+  T_n\rightarrow T_{n+1}&=\textcolor{green}{a}\textcolor{blue}{b}\\
+  T_{n+1}&\rightarrow \textcolor{green}{ab}\textcolor{blue}{b}\textcolor{red}{a}
+\end{align*}
+Thus, if the same rule of replacement is applied to $t_0t_1\ldots$, the result will be the same string.
+\section*{Used Functions}
+\begin{verbatim}
+func thue(n: Int) -> String {
+    var sequence = "0"
+    guard n > 0 else {
+        return sequence
+    }
+    for _ in 0..<n {
+        var complement = ""
+        for bit in sequence {
+            complement += (bit == "0" ? "1" : "0")
+        }
+        sequence += complement
+    }
+    return sequence
+}
+func isPalindrome(sequence: String) -> Bool {
+    return sequence == String(sequence.reversed())
+}
+func thueReplacement(sequence: String) -> String {
+    var alteredSequence = ""
+    for bit in sequence {
+        alteredSequence += (bit == "0" ? "01" : "10")
+    }
+    return alteredSequence
+}
+\end{verbatim}
+\end{document}

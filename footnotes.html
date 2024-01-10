@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/miscellaneous/styleystuff.css">
+    <meta charset="utf-8">
+    <meta name="author" content="Mohibullah Meer">
+    <meta name="description" content="Note: Does not explain headnotes, shouldernotes, kneenotes, or toenotes.">
+    <title>Making Footnotes</title>
+  </head>
+  <body>
+    <div class="body">
+      <h1>Making Footnotes <span class="decor">|</span></h1>
+      <h2>What Is a Footnote?</h2>
+      <p>Footnotes are used in almost every kind of informative media, like articles, books, or entries. Their main purpose is to provide supplementary information or a citation in a way that doesn't make the text cluttered or hard to understand, kinda like a more discreet pair of parentheses.</p>
+      <p>Digitally, footnotes are an alternative to the "title" attribute, which have nearly identical functions. However, there's one detail that sets the two apart: activation. If you open something like a Wikipedia article and <i>hover</i> over the reference to a footnote, you may be presented with the same information written in the "Footnotes" section. That's the only similarity that references share with the "title" attribute, though, and that becomes a problem for mobile browsers. Why? The "title" attribute can <i>only</i> be accessed through hovering, and you can't really hover on a phone. The reference, though, can be both hovered over <i>and</i> clicked to access the annotation.</p>
+      <p>So which one's better? It depends, really. Footnotes are more mobile-friendly, but if you need to apply more information to something like an image or a link, the "title" attribute would do the job in a more visually appealing way. Additionally, footnotes are better used when the added details are relevant and helpful, so if you wanted to hide a joke within your code, it'd be better to write it into the "title" attribute.</p>
+      <h2>How to Create a Footnote</h2>
+      <p>Creating a footnote is fairly easy. The process itself has two stages: the reference itself and the footnote that it links to. Most footnotes and their sections have links that redirect to one another so that the reader may easily continue reading, meaning that each will have to consist of two things:</p>
+      <p style="text-indent: 2.5%;">1. A link to the destination.</p>
+      <p style="text-indent: 2.5%;">2. An "id" attribute, which resembles the "class" attribute but can only be used once. This allows elements to be used as "href" destinations to certain parts of text.</p>
+      <p>As long as those two are present in both the redirect and the footnote, any further additions or changes serve a mainly aesthetic use.</p>
+      <p>The model for a reference and footnote that link to one another, in its most basic form, would resemble:</p>
+      <p style="text-indent: 2.5%;">Reference: &lt;p&gt;This page took a long time to create. &lt;a href="#footnote1" id="reference1"&gt;[1]&lt;/a&gt;&lt;/p&gt;</p>
+      <p style="text-indent: 2.5%;">Footnote: &lt;p&gt;&lt;a href="#reference1" id="footnote1"&gt;1.&lt;/a&gt; In fact, it took about 53 minutes.&lt;/p&gt;</p>
+      <p>In action, this code would look like this:</p>
+      <br>
+      <p>This page took a long time to create. <a href="#footnote1" id="reference1" title="In fact, it took about 53 minutes.">[1]</a></p>
+      <br>
+      <p>Once you've got this model done, you can add your own personal tweaks, like using &lt;sup&gt; tags in the reference to make it easier to discern from the rest of the text, like this:</p>
+      <br>
+      <p>Consolas is probably my favorite font.<sup><a href="#footnote2" id="reference2" title="Unfortunately, I have to use Monaco if it doesn't show up.">2</a></sup></p>
+      <br>
+      <p>After reading this, you'll have acquired a decent understanding of implementing footnotes in HTML, but hey, it doesn't hurt to research further. Make good use of the resources you've got, as well as footnotes!</p>
+      <h2><a href="index.html">Back</a></h2>
+      <hr>
+      <h2>Footnotes</h2>
+      <p><a href="#reference1" id="footnote1">1.</a> In fact, it took about 53 minutes.</p>
+      <p><a href="#reference2" id="footnote2">2.</a> Unfortunately, I have to use Monaco if it doesn't show up.</p>
+      <div id="corner"><p>/www/Digital Portfolio/footnotes.html</p></div>
+    </div>
+  </body>
+</html>
+<!-- 53 minutes 21.8 seconds december 21 of 2022 -->

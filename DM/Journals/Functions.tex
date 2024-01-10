@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage{mathtools, amsfonts, xcolor}
+\usepackage[parfill]{parskip}
+\title{Functions Homework}
+\author{Mohibullah Meer}
+\date{October 26, 2023}
+% paired delimiter
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\begin{document}
+\maketitle
+\section*{6.1. Let $f$ and the inverse relation $f^{-1}$ be a function. Is $f^{-1}$ a bijection?:}
+As long as $f$ is a bijection, $f^{-1}$ is a bijection. If:
+\begin{itemize}
+\item $f$ is injective, but not surjective, its domain is smaller than its codomain and vice versa for $f^{-1}$, meaning that $f^{-1}$ will lack a mapping for at least 1 of its domain values, invalidating it as a function.
+\item $f$ is surjective, but not injective, its domain is larger than its codomain and vice versa for $f^{-1}$, meaning that at least 1 of the domain values in $f^{-1}$ has more than 1 mapping, invalidating it as a function.
+\item $f$ is neither surjective nor injective, the above cases apply.
+\item $f$ is surjective and injective, it is bijective. Both $f$ and $f^{-1}$ have a domain and codomain of the same size. Since every domain value has a mapping and every codomain value has a single association in both functions, $f^{-1}$ is bijective.
+\end{itemize}
+\section*{6.3.:}
+\subsection*{6.3a: Show that if two finite sets $A$ and $B$ are the same size, and $r$ is an injective function from $A$ to $B$, then $r$ is a bijection.}
+Since $r$ is injective, for any $a\in A$, if two $r(a)$ are the same, then they are associated with the same $a$.
+
+Let $I$ be the image of $A$ under $r$. $I$ is then a subset of $B$, the codomain. If $I=B$, then all codomain values have an association, and $r$ is surjective.
+\begin{align*}
+  I&=\{r(a_1),r(a_2),\ldots,r(a_{|A|})\}\\
+  |I|&=|B|\\
+  B-I&=\phi\\
+  I&=B
+\end{align*}
+Thus, $r$ is both injective and surjective.
+\subsection*{6.3b: Give a counterexample showing that the conclusion of (a) does not necessarily hold if $A$ and $B$ are two bijectively related infinite sets.}
+If the cardinalities of $A$ and $B$ are different types of infinity, this conclusion can be countered. For example, if $|A|=\infty_\mathbb{N}$ and $|B|=\infty_\mathbb{R}$, the injection will not be able to associate every codomain value with a domain value. Thus, $r$ would not be a surjection.
+\section*{6.5. Suppose $f:A\rightarrow B$, $g:C\rightarrow D$, and $A\subseteq D$. Explain when $(f\circ g)^{-1}$ exists as a function from a subset of $B$ to $C$:}
+\begin{align*}
+  f:A\rightarrow B\\
+  g:C\rightarrow D\\
+  f\circ g:C\rightarrow D,A\rightarrow B\\
+  f\circ g=f[g(c)]
+\end{align*}
+$f\circ g$ is constrained by whether both $D$ and $A$ contain the element mapped from $C$.
+\begin{align*}
+  f^{-1}:B\rightarrow A\\
+  g^{-1}:D\rightarrow C\\
+  (f\circ g)^{-1}: B\rightarrow A,D\rightarrow C\\
+  (f\circ g)^{-1}=g^{-1}[f^{-1}(b)]
+\end{align*}
+In contrast, $(f\circ g)^{-1}$ does not have any constraints, since $A\subseteq D$ means that any element mapped from $B$ to $A$ is in $D$.
+\section*{6.7. Given $f(n)=2n$, $g(n)=2n+1$, and the function $h$ from Theorem 6.4, what are $f^{-1}$, $g^{-1}$, and $h^{-1}$?:}
+$f^{-1}$ is a bijection from the even integers to $\mathbb{Z}$:
+\begin{align*}
+  f(n)&=2n\\
+  n&=2f^{-1}(n)\\
+  \frac{n}{2}&=f^{-1}(n)\\
+  f^{-1}(n)&=\frac{n}{2}
+\end{align*}
+$g^{-1}$ is a bijection from the odd integers to $\mathbb{Z}$:
+\begin{align*}
+  g(n)&=2n+1\\
+  n&=2g^{-1}(n)+1\\
+  n-1&=2g^{-1}(n)\\
+  \frac{n-1}{2}&=g^{-1}(n)\\
+  g^{-1}(n)&=\frac{n-1}{2}
+\end{align*}
+$h^{-1}$ is a bijection from $C\rightarrow B$, where $A$, $B$, and $C$ are sets:
+\begin{align*}
+  f&:A\rightarrow B\\
+  f^{-1}&:B\rightarrow A\\
+  g&:A\rightarrow C\\
+  g^{-1}&:C\rightarrow A\\
+  h&:B\rightarrow A\rightarrow C\\
+  h&=g\circ f^{-1}\\
+  h^{-1}&:C\rightarrow A\rightarrow B\\
+  h^{-1}&=f\circ g^{-1}
+\end{align*}
+\end{document}

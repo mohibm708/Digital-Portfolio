@@ -1,0 +1,299 @@
+\documentclass{article}
+\usepackage{mathtools, amsfonts}
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage[parfill]{parskip}
+\title{Normal Forms Homework}
+\author{Mohibullah Meer}
+\date{November 29, 2023}
+% paired delimiter
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\begin{document}
+\maketitle
+\section*{10.1. Pair each statement with its negation.}
+\[\begin{array}{|c|c||c|c|c|c|c|}
+\hline
+\cellcolor{black}&\cellcolor{black}&\text{a}&\text{b}&\text{c}&\text{d}&\text{e}\\
+\hline
+p&q&p\oplus q&\neg p\land q&p\Rightarrow(q\Rightarrow p)&p\Rightarrow q&p\land\neg q\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\hline
+\end{array}\]
+\[\begin{array}{|c|c||c|c|c|c|c|}
+\hline
+\cellcolor{black}&\cellcolor{black}&\text{f}&\text{g}&\text{h}&\text{i}&\text{j}\\
+\hline
+p&q&q\land(p\land\neg p)&p\lor\neg q&p\Leftrightarrow q&p\land(q\lor\neg q)&(p\Rightarrow q)\Rightarrow p\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+\begin{center}\begin{tabular}{|c|c|}
+    \hline
+    Statement&Negation\\
+    \hline
+    a&h\\
+    b&g\\
+    c&f\\
+    d&e\\
+    e&d\\
+    f&c\\
+    g&b\\
+    h&a\\
+    i&$\neg$j\\ % >:]
+    j&$\neg$i\\
+    \hline
+\end{tabular}\end{center}
+\section*{10.3. Decide whether each formula is a tautology, satisfiable, or unsatisfiable:}
+\subsection*{10.3a: $(p\lor q)\lor(q\Rightarrow p)$}
+This is a tautology.
+\[\begin{array}{|c|c||c|c|c|}
+\hline
+p&q&p\lor q&q\Rightarrow p&\textcolor{blue}{(p\lor q)\lor(q\Rightarrow p)}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+\subsection*{10.3b: $(p\Rightarrow q)\Rightarrow p$}
+This is satisfiable.
+\[\begin{array}{|c|c||c|c|}
+\hline
+p&q&p\Rightarrow q&\textcolor{blue}{(p\Rightarrow q)\Rightarrow p}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+\subsection*{10.3c: $p\Rightarrow(q\Rightarrow p)$}
+This is a tautology.
+\[\begin{array}{|c|c||c|c|}
+\hline
+p&q&q\Rightarrow p&\textcolor{blue}{p\Rightarrow(q\Rightarrow p)}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+\subsection*{10.3d: $(\neg p\land q)\land(q\Rightarrow p)$}
+This is unsatisfiable.
+\[\begin{array}{|c|c||c|c|c|}
+\hline
+p&q&\neg p\land q&q\Rightarrow p&\textcolor{blue}{(\neg p\land q)\land(q\Rightarrow p)}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\hline
+\end{array}\]
+\subsection*{10.3e: $(p\Rightarrow q)\Rightarrow(\neg p\Rightarrow\neg q)$}
+This is satisfiable.
+\[\begin{array}{|c|c||c|c|c|}
+\hline
+p&q&p\Rightarrow q&\neg p\Rightarrow\neg q&\textcolor{blue}{(p\Rightarrow q)\Rightarrow(\neg p\Rightarrow\neg q)}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+\subsection*{10.3f: $(\neg p\Rightarrow\neg q)\Leftrightarrow(q\Rightarrow p)$}
+This is a tautology.
+\[\begin{array}{|c|c||c|c|c|}
+\hline
+p&q&\neg p\Rightarrow\neg q&q\Rightarrow p&\textcolor{blue}{(\neg p\Rightarrow\neg q)\Leftrightarrow(q\Rightarrow p)}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+\section*{10.5.:}
+\subsection*{10.5a: Show that for any formulas $\alpha$, $\beta$, $\gamma$, $(\alpha\land\beta)\lor\alpha\lor\gamma\equiv\alpha\lor\gamma$.}
+\[\begin{array}{|c|c|c||c|c|c|}
+\hline
+\alpha&\beta&\gamma&\alpha\land\beta&\textcolor{blue}{\alpha\lor\gamma}&\textcolor{blue}{(\alpha\land\beta)\lor\alpha\lor\gamma}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+\subsection*{10.5b: Give the corresponding rule for simplifying $(\alpha\lor\beta)\land\alpha\land\gamma$.}
+\[(\alpha\lor\beta)\land\alpha\land\gamma\equiv\alpha\land\gamma\]
+\[\begin{array}{|c|c|c||c|c|c|}
+\hline
+\alpha&\beta&\gamma&\alpha\lor\beta&\textcolor{blue}{\alpha\land\gamma}&\textcolor{blue}{(\alpha\lor\beta)\land\alpha\land\gamma}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+\subsection*{10.5c: Find the simplest possible disjunctive and conjunctive normal forms of the formula $(p\land q)\Rightarrow(p\oplus q)$.}
+\[\begin{array}{|c|c||c|c|c|}
+\hline
+p&q&p\land q&p\oplus q&\textcolor{blue}{(p\land q)\Rightarrow(p\oplus q)}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\hline
+\end{array}\]
+Disjunctive normal form: $\neg p\lor\neg q$
+
+Conjunctive normal form: $\neg p\lor\neg q\land\neg p\lor\neg q$
+\section*{10.7:}
+\subsection*{10.7a: Write out a conjunctive normal form of the formula in the case $n=3$.}
+\[(p_1\land q_1)\lor(p_2\land q_2)\lor(p_3\land q_3)\]
+Using the distributive law, this formula will be turned into one of $2^3$ clauses.
+\[\begin{array}{|c|c|c|}
+\hline
+\cellcolor{black}&p_1&q_1\\
+\hline
+p_2&p_1,p_2&q_1,p_2\\
+\hline
+q_2&p_1,q_2&q_1,q_2\\
+\hline
+\end{array}\]
+\[\begin{array}{|c|c|c|c|c|}
+\hline
+\cellcolor{black}&p_1,p_2&q_1,p_2&p_1,q_2&q_1,q_2\\
+\hline
+p_3&p_1,p_2,p_3&q_1,p_2,p_3&p_1,q_2,p_3&q_1,q_2,p_3\\
+\hline
+q_3&p_1,p_2,q_3&q_1,p_2,q_3&p_1,q_2,q_3&q_1,q_2,q_3\\
+\hline
+\end{array}\]
+\begin{gather*}
+  (p_1\lor p_2\lor p_3)\land(q_1\lor p_2\lor p_3)\land(p_1\lor q_2\lor p_3)\land(q_1\lor q_2\lor p_3)\land(p_1\lor p_2\lor q_3)\land\\(q_1\lor p_2\lor q_3)\land(p_1\lor q_2\lor q_3)\land(q_1\lor q_2\lor q_3)
+\end{gather*}
+\subsection*{10.7b: How long is the CNF? For general $n$, how long is the CNF as a function of $n$?}
+The CNF has a length of 47.
+\[\begin{array}{|c|c|c|}
+\hline
+n&\ldots\lor p_n\land q_n\text{ length}&\text{CNF length}\\
+\hline
+1&3&3\\
+2&7&15\\
+3&11&47\\
+\hline
+\end{array}\]
+The length of the CNF equations as a function of $n$ can be described as the function $f(n)=2^n*(2n-1)+(2^n-1)$, where
+\begin{itemize}
+\item $2^n$ represents the number of clauses
+\item $2n-1$ represents the number of characters in each clause
+\item $2^n-1$ represents the number of operators between each clause
+\end{itemize}
+This can then be simplified into:
+\begin{align*}
+  f(x)&=2^n*(2n-1)+(2^n-1)\\
+  f(x)&=2^n*(2n)-1\\
+  f(x)&=2^{n+1}*n-1
+\end{align*}
+\subsection*{10.7c: Show that putting a formula into disjunctive normal form may increase its length exponentially.}
+Given a similar formula of
+\[(p_1\lor q_1)\land\ldots\land(p_n\lor q_n)\text{,}\]
+then distributing it into DNF will yield an equation of the same length as the CNF of 10.7a and 10.7b. For example, using
+\[(p_1\lor q_1)\land(p_2\lor q_2)\land(p_3\lor q_3)\text{,}\]
+\[\begin{array}{|c|c|c|}
+\hline
+\cellcolor{black}&p_1&q_1\\
+\hline
+p_2&p_1,p_2&q_1,p_2\\
+\hline
+q_2&p_1,q_2&q_1,q_2\\
+\hline
+\end{array}\]
+\[\begin{array}{|c|c|c|c|c|}
+\hline
+\cellcolor{black}&p_1,p_2&q_1,p_2&p_1,q_2&q_1,q_2\\
+\hline
+p_3&p_1,p_2,p_3&q_1,p_2,p_3&p_1,q_2,p_3&q_1,q_2,p_3\\
+\hline
+q_3&p_1,p_2,q_3&q_1,p_2,q_3&p_1,q_2,q_3&q_1,q_2,q_3\\
+\hline
+\end{array}\]
+\begin{gather*}
+  (p_1\land p_2\land p_3)\lor(q_1\land p_2\land p_3)\lor(p_1\land q_2\land p_3)\lor(q_1\land q_2\land p_3)\lor(p_1\land p_2\land q_3)\lor\\(q_1\land p_2\land q_3)\lor(p_1\land q_2\land q_3)\lor(q_1\land q_2\land q_3)
+\end{gather*}
+has the same length as the CNF of the same $n$.
+\subsection*{10.7d: Why is the algorithm mentioned in 10.7d exponentially costly?}
+Using the formula from 10.7c where $n=2$, the equation and truth table are:
+\[(p_1\lor q_1)\land(p_2\lor q_2)\]
+\[\begin{array}{|c|c|c|c||c|c|c|}
+\hline
+p_1&q_1&p_2&q_2&p_1\lor q_1&p_2\lor q_2&\textcolor{blue}{(p_1\lor q_1)\land(p_2\lor q_2)}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+Distributing this formula results in the DNF form and a truth table of:
+\[(p_1\land p_2)\lor(q_1\land p_2)\lor(p_1\land q_2)\lor(q_1\land q_2)\]
+\[\begin{array}{|c|c|c|c||c|c|c|c|c|}
+\hline
+p_1&q_1&p_2&q_2&p_1\land p_2&q_1\land p_2&p_1\land q_2&q_1\land q_2&\textcolor{blue}{\text{DNF form}}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+The issue with using this algorithm of checking each clause for contradictions is that when the formula is converted into DNF, the equation now has $2^n$ clauses to check, meaning that as the algorithm takes in larger formulas, it will take much more time than needed to determine if they are satisfiable.
+\section*{10.9}
+\end{document}

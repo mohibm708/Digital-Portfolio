@@ -1,0 +1,168 @@
+\documentclass{article}
+\usepackage{mathtools, amsfonts}
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage[parfill]{parskip}
+\title{Propositional Logic Homework}
+\author{Mohibullah Meer}
+\date{November 13, 2023}
+% paired delimiter
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\begin{document}
+\maketitle
+\section*{9.1. Write formulas that are logically equivalent to:}
+\subsection*{9.1a: $p\land q$}
+\[\neg(\neg p\lor\neg q)\]
+\subsection*{9.1b: $p\oplus q$}
+\[\neg(\neg(p\lor q) \lor\neg(\neg p\lor\neg q))\]
+\subsection*{9.1c: $p\Leftrightarrow q$}
+\[\neg(p\lor q)\lor\neg(\neg p\lor\neg q)\]
+\section*{9.3. Prove the associative laws by comparing truth tables for the two expressions asserted to be equivalent:}
+\subsection*{9.3a: $(\alpha\lor\beta)\lor\gamma\equiv\alpha\lor(\beta\lor\gamma)$}
+\[\begin{array}{|c|c|c||c|c|c|c|}
+\hline
+\alpha&\beta&\gamma&\alpha\lor\beta&\beta\lor\gamma&\textcolor{blue}{(\alpha\lor\beta)\lor\gamma}&\textcolor{blue}{\alpha\lor(\beta\lor\gamma)}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+\subsection*{9.3b: $(\alpha\land\beta)\land\gamma\equiv\alpha\land(\beta\land\gamma)$}
+\[\begin{array}{|c|c|c||c|c|c|c|}
+\hline
+\alpha&\beta&\gamma&\alpha\land\beta&\beta\land\gamma&\textcolor{blue}{(\alpha\land\beta)\land\gamma}&\textcolor{blue}{\alpha\land(\beta\land\gamma)}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+\section*{9.5. Using a truth table, determine whether each of the following compound propositions is satisfiable, a tautology, or unsatisfiable:}
+\subsection*{9.5a: $p\Rightarrow(p\lor q)$}
+This proposition is a tautology.
+\[\begin{array}{|c|c||c|c|}
+\hline
+p&q&p\lor q&\textcolor{blue}{p\Rightarrow(p\lor q)}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+\subsection*{9.5b: $\neg(p\Rightarrow(p\lor q))$}
+Being the negation of a tautology, this proposition is never true---it is unsatisfiable.
+\[\begin{array}{|c|c||c|c|}
+\hline
+p&q&p\Rightarrow(p\lor q)&\textcolor{blue}{\neg(p\Rightarrow(p\lor q))}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\hline
+\end{array}\]
+\subsection*{9.5c: $p\Rightarrow(p\Rightarrow q)$}
+This proposition is satisfiable.
+\[\begin{array}{|c|c||c|c|}
+\hline
+p&q&p\Rightarrow q&\textcolor{blue}{p\Rightarrow(p\Rightarrow q)}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+\section*{9.7. Prove that $\alpha\equiv\beta$ if and only if $\alpha\Leftrightarrow\beta$ is a tautology.}
+\[\begin{array}{|c|c||c|c|}
+\hline
+\alpha&\beta&\textcolor{blue}{\alpha\Leftrightarrow\beta}&\textcolor{blue}{\alpha\equiv\beta}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+Since these propositions are the same, then the tautology of $\alpha\Leftrightarrow\beta$ asserts the tautology of $\alpha\equiv\beta$.
+\section*{9.9. Give real world interpretations of $p$, $q$, and $r$ such that $(p\land q)\Rightarrow r$ and $p\land(q\Rightarrow r)$ mean quite different things, and one is true while the other is false.}
+\[\begin{array}{|c|c|c||c|c|c|c|}
+\hline
+p&q&r&p\land q&q\Rightarrow r&\textcolor{blue}{(p\land q)\Rightarrow r}&\textcolor{blue}{p\land(q\Rightarrow r)}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\rowcolor{yellow}\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+\begin{itemize}
+\item $p$---cold or not cold
+\item $q$---schoolday or not schoolday
+\item $r$---brown coat or no brown coat
+\item $(\textcolor{red}{\tt{F}}\land\textcolor{red}{\tt{F}})\Rightarrow\textcolor{ForestGreen}{\tt{T}}\equiv\textcolor{ForestGreen}{\tt{T}}$---I'm wearing my brown coat, even if it's not a cold schoolday.
+\item $\textcolor{red}{\tt{F}}\land(\textcolor{red}{\tt{F}}\Rightarrow\textcolor{ForestGreen}{\tt{T}})\equiv\textcolor{Red}{\tt{F}}$---Although I could wear my brown coat outside of school, it would never happen on a day that wasn't cold.
+\end{itemize}
+\section*{9.11.:}
+\subsection*{9.11a: Write $p\Leftrightarrow q$ using $\oplus$ and the constant \textcolor{ForestGreen}{\tt{T}}.}
+\[(p\oplus q)\oplus\textcolor{ForestGreen}{\tt{T}}\]
+\[\begin{array}{|c|c||c|c|c|}
+\hline
+p&q&p\oplus q&\textcolor{blue}{(p\oplus q)\oplus\textcolor{ForestGreen}{\tt{T}}}&\textcolor{blue}{p\Leftrightarrow q}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+\subsection*{9.11b: Show that $\oplus$ and $\Leftrightarrow$ are associative.}
+\[(p\oplus q)\oplus r\equiv p\oplus(q\oplus r)\]
+\[\begin{array}{|c|c|c||c|c|c|c|}
+\hline
+p&q&r&p\oplus q&q\oplus r&\textcolor{blue}{(p\oplus q)\oplus r}&\textcolor{blue}{p\oplus(q\oplus r)}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+\[(p\Leftrightarrow q)\Leftrightarrow r\equiv p\Leftrightarrow(q\Leftrightarrow r)\]
+\[\begin{array}{|c|c|c||c|c|c|c|}
+\hline
+p&q&r&p\Leftrightarrow q&q\Leftrightarrow r&\textcolor{blue}{(p\Leftrightarrow q)\Leftrightarrow r}&\textcolor{blue}{p\Leftrightarrow(q\Leftrightarrow r)}\\
+\hline
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}&\textcolor{red}{\tt{F}}\\
+\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}&\textcolor{ForestGreen}{\tt{T}}\\
+\hline
+\end{array}\]
+\subsection*{9.11c: Prove that $\{\oplus,\Leftrightarrow,\neg,\textcolor{ForestGreen}{\tt{T}},\textcolor{red}{\tt{F}}\}$ is not a complete set.}
+$\oplus$ and $\Leftrightarrow$ return 2 true and 2 false values. As a result, they cannot be altered into $\land$, which, alongside $\neg$, can represent any function, because $\land$ has 3 false values and 1 true value.
+\end{document}

@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage{mathtools, amsfonts, xcolor}
+\usepackage[parfill]{parskip}
+\title{Sets Homework}
+\author{Mohibullah Meer}
+\date{October 26, 2023}
+% paired delimiter
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\begin{document}
+\maketitle
+\section*{5.1. What are these sets?:}
+\subsection*{5.1a: $\{\{2,4,6\}\cup\{6,4\}\}\cap\{4,6,8\}$}
+\begin{align*}
+  \{\{2,4,6\}\cup\{6,4\}\}&\cap\{4,6,8\}\\
+  \{2,4,6\}&\cap\{4,6,8\}\\
+  \{4,6\}
+\end{align*}
+\subsection*{5.1b: $\mathcal{P}(\{7,8,9\})-\mathcal{P}(\{7,9\})$}
+\begin{align*}
+  \mathcal{P}(\{7,8,9\})&-\mathcal{P}(\{7,9\})\\
+  \{\phi,\{7\},\{8\},\{9\},\{7,8\},\{8,9\},\{7,9\},\{7,8,9\}&-\{\phi,\{7\},\{9\},\{7,9\}\}\\
+  \{\{8\},\{7,8\},\{8,9\},\{7,8,9\}\}
+\end{align*}
+\subsection*{5.1c: $\mathcal{P}(\phi)$}
+\begin{align*}
+  \mathcal{P}(&\phi)\\
+  \{&\phi\}
+\end{align*}
+\subsection*{5.1d: $\{1, 3, 5\}\times\{0\}\\$}
+\begin{align*}
+  \{1, 3, 5\}\times\{0\}\\
+  \{(1,0),(3,0),(5,0)\}
+\end{align*}
+\subsection*{5.1e: $\{2,4,6\}\times\phi\\$}
+\begin{align*}
+  \{2,4,6\}\times\phi\\
+  \phi
+\end{align*}
+\subsection*{5.1f:}
+\begin{align*}
+  \mathcal{P}(\{0\})&\times\mathcal{P}(\{1\})\\
+  \{\phi,\{0\}\}&\times\{\phi,\{1\}\}\\
+  \{(\phi,\phi),(\phi,\{1\})&,(\{0\},\phi),(\{0\},\{1\})\}
+\end{align*}
+\subsection*{5.1g:}
+\begin{align*}
+  \mathcal{P}(\mathcal{P}(\{2\}))\\
+  \mathcal{P}(\{\phi,\{2\}\})\\
+  \{\phi,\{\phi\},\{\{2\}\},\{\phi,\{2\}\}\}
+\end{align*}
+\section*{5.3.: Show that if $A$ is a finite set, then $|\mathcal{P}(A)|=2^{|A|}$.}
+Base case---$\phi$:
+\begin{align*}
+  \mathcal{P}(\phi)&=\{\phi\}\\
+  |\mathcal{P}(\phi)|&=2^{0}
+\end{align*}
+Induction hypothesis---Suppose that for any $|A|\geq0$, $|\mathcal{P}(A)|=2^{|A|}$.
+
+Induction step---$|A'|=|A|+1$:
+
+$A'$ contains all the elements in $A$, except for one additional member. Therefore for every member of $\mathcal{P}(A)$, there are $2^{|A|}$ distinct combinations of members that include this new element. As a result, the cardinality of the powerset of $A'$ is:
+\begin{align*}
+  |\mathcal{P}(A')|&=2^{|A|}+2^{|A|}\\
+  |\mathcal{P}(A')|&=2^1*2^{|A|}\\
+  |\mathcal{P}(A')|&=2^{|A|+1}\\
+  |\mathcal{P}(A')|&=2^{|A'|}  
+\end{align*}
+\section*{5.5. Suppose:}
+\subsection*{5.5a: Compare $|\mathcal{P}(A\times B)|$ and $|\mathcal{P}(A)|*|\mathcal{P}(B)|$. Under what circumstances is one larger than the other, and what is their ratio?}
+Only when $|A|,|B|=0$ or $|A|,|B|=2$ will $|\mathcal{P}(A\times B)|=|\mathcal{P}(A)|*|\mathcal{P}(B)|$. Otherwise:
+\begin{itemize}
+\item If both have more than 2 members each, $|\mathcal{P}(A\times B)|$ will be higher.
+  \item If one set has at most 1 member, $|\mathcal{P}(A)|*|\mathcal{P}(B)|$ will be higher.
+  \end{itemize}
+\subsection*{5.5b: Is it inevitably true that $(A-B)\cap(B-A)=\phi$?}
+Yes. Since $A-B$ is $A$ without any elements also in $B$, and $B-A$ is the inverse, no elements exist within both of these sets.
+\section*{5.7. Decide whether each statement is true or false and why:}
+\subsection*{5.7a: $\phi=\{\phi\}$}
+False. $\phi$ has a cardinality of 0 while $\{\phi\}$ has a cardinality of 1.
+\subsection*{5.7b: $\phi=\{0\}$}
+False. $\phi$ has a cardinality of 0 while $\{0\}$ has a carindality of 1.
+\subsection*{5.7c: $|\phi|=0$}
+True. $\phi$ is an empty set, meaning that it has a cardinality of 0.
+\subsection*{5.7d: $|\mathcal{P}(\phi)|=0$}
+False. $\mathcal{P}(\phi)$ results in $\{\phi\}$, a set of 1 member.
+\subsection*{5.7e: $\phi\in\{\}$}
+True. $\phi$ and $\{\}$ have the same cardinality, so, being equal, $\phi$ can be a subset of $\{\}$.
+\subsection*{5.7f: $\phi=\{x\in\mathbb{N}:x\leq0$ and $x>0\}$}
+False. This set contains all natural numbers, while $\phi$ contains no members.
+\section*{5.9. Prove the following:}
+\subsection*{5.9a: $A\cap(A\cup B)=A$}
+\begin{align*}
+  A\cap(A\cup B)&=A\\
+  (A\cap A)\cup(A\cap B)&=A\\
+  A\cup(A\cap B)&=A
+\end{align*}
+$A\cap B$ is a subset of $A$, meaning that its union with $A$ is equal to the set itself.
+\subsection*{5.9b: $A-(B\cap C)=(A-B)\cup(A-C)$}
+In $A-(B\cap C)$, the elements in $B$ and $C$ are removed from $A$, resulting in a set that has all elements of $A$ except for the ones in common with \textit{both} $B$ and $C$.
+
+In $(A-B)\cup(A-C)$, a union is made between two sets: $A$, without any elements in common with $B$, and $A$, without any in common with $C$. In both sets, the intersection of $B$ and $C$ is excluded from $A$. As a result, the union is a set that has all element of $A$ except for the ones in common with \textit{both} $B$ and $C$.
+\section*{5.11.: Defining $\langle x,y\rangle$ to be $\{x,\{x,y\}\}$, prove that $\langle x,y\rangle=\langle u,v\rangle$ iff $x=u$ and $y=v$.}
+\begin{align*}
+  \langle x,y\rangle&=\langle u,v\rangle\\
+  \{x,\{x,y\}\}&=\langle u,v\rangle\\
+  \{x,\{x,y\}\}&=\{u,\{u,v\}\}\\
+  \{x,\{x,y\}\}&=\{x,\{x,y\}\}
+\end{align*}
+\end{document}

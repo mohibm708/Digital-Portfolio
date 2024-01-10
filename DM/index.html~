@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon_juni.ico">
+    <link rel="stylesheet" href="../assets/miscellaneous/styleystuff.css">
+    <link rel="stylesheet" href="../assets/miscellaneous/styleystuff_juni.css">
+    <meta charset="utf-8">
+    <meta name="author" content="Mohibullah Meer">
+    <meta name="description" content="A collection of my work from DM of 2023-2024.">
+    <title>Discrete Math</title>
+  </head>
+  <body>
+    <div class="body">
+      <h1>Discrete Math <span class="decor">|</span></h1>
+      <p>This is a collection of all my work from the DM class of 2023-2024.</p>
+      <h2>Information</h2>
+      <details>
+	<summary><h3 style="display: inline">Major Topics</h3></summary>
+	<p><small>An excerpt from Mr. Ben-Yaakov's syllabus describes the focal points of DM as:</small></p>
+	<ul class="fineprint">
+	  <li>Symbolic logic</li>
+	  <li>Graphs and trees</li>
+	  <li style="margin-left: 2.5%;">Traversal methods</li>
+	  <li>Probabilities expectations</li>
+	  <li>Permutations and combinations</li>
+	  <li>Sets, functions, and relations</li>
+	  <li>De Morgan's Laws</li>
+	  <li>Logical equivalence</li>
+	  <li>Normal forms</li>
+	  <li>Proofs</li>
+	  <li style="margin-left: 2.5%;">Direct, indirect</li>
+	  <li style="margin-left: 2.5%;">Contradiction</li>
+	  <li style="margin-left: 2.5%;">Induction</li>
+	  <li style="margin-left: 2.5%;">Existence</li>
+	  <li style="margin-left: 2.5%;">Constructive</li>
+	  <li>Recursion</li>
+	  <li>Product and sum rules</li>
+	  <li>Bayes' theorem</li>
+	</ul>
+      </details>
+      <h2>Journals</h2>
+      <details>
+	<summary><h3>The Pigeonhole Principle</h3></summary>
+	<p><a href="Journals/Pigeonhole.html">The Pigeonhole Principle</a></p>
+	<p><a href="Journals/Pigeonhole.tex">The Pigeonhole Principle (.tex)</a></p>
+      </details>
+      <details>
+	<summary><h3>Chapter 2 Homework</h3></summary>
+	<p><a href="Journals/Chapter-2.html">Chapter 2 Homework</a></p>
+	<p><a href="Journals/Chapter-2.tex">Chapter 2 Homework (.tex)</a></p>
+      </details>
+      <details>
+	<summary><h3>Chapter 3 Homework</h3></summary>
+	<p><a href="Journals/Chapter-3.html">Chapter 3 Homework</a></p>
+	<p><a href="Journals/Chapter-3.tex">Chapter 3 (.tex)</a></p>
+      </details>
+      <details>
+	<summary><h3>Sets</h3></summary>
+	<p><a href="Journals/Sets.html">Sets</a></p>
+	<p><a href="Journals/Sets.tex">Sets (.tex)</a></p>
+      </details>
+      <details>
+	<summary><h3>Functions</h3></summary>
+	<p><a href="Journals/Functions.html">Functions</a></p>
+	<p><a href="Journals/Functions.tex">Functions (.tex)</a></p>
+      </details>
+      <details>
+	<summary><h3>Countable and Uncountable Sets</h3></summary>
+	<p><a href="Journals/CountableSets.html">Countable and Uncountable Sets</a></p>
+	<p><a href="Journals/CountableSets.tex">Countable and Uncountable Sets (.tex)</a></p>
+      </details>
+      <details>
+	<summary><h3>Propositional Logic</h3></summary>
+	<p><a href="Journals/PropositionalLogic.html">Propositional Logic</a></p>
+	<p><a href="Journals/PropositionalLogic.tex">Propositional Logic (.tex)</a></p>
+      </details>
+      <details>
+	<summary><h3>Normal Forms</h3></summary>
+	<p><a href="Journals/NormalForms.html">Normal Forms</a></p>
+	<p><a href="Journals/NormalForms.tex">Normal Forms (.tex)</a></p>
+      </details>
+<h2><a href="../index.html">Back</a></h2>
+      <div id="corner"><p>/www/Digital Portfolio/DM/index.html</p></div>
+    </div>
+  </body>
+</html>
+<!--
+    <details>
+      <summary><h3>Template</h3></summary>
+      <p><a href="Journals/Template.html">Template</a></p>
+      <p><a href="Journals/Template.tex">Template (.tex)</a></p>
+    </details>
+-->

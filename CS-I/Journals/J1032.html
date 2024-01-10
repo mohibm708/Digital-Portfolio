@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+    <link rel="stylesheet" href="../../assets/miscellaneous/styleystuff.css">
+    <meta charset="utf-8">
+    <meta name="author" content="Mohibullah Meer">
+    <title>J1032: Negative Integers</title>
+  </head>
+  <body>
+    <div class="body">
+      <h1>J1032: Negative Integers <span class="decor">|</span></h1>
+      <p>Name: Mohibullah Meer</p>
+      <p>Journal: J1032</p>
+      <p>Date: 1-Dec-2022</p>
+      <br>
+      <p>I received assistance from: No one</p>
+      <br>
+      <p>I assisted: No one</p>
+      <br>
+      <h2>1.1:</h2>
+      <p>+11<sub>10</sub> would be encoded as 0000 1011.</p>
+      <br>
+      <h2>1.2:</h2>
+      <p>-11<sub>10</sub> would be encoded as 1000 1011.</p>
+      <br>
+      <h2>1.3:</h2>
+      <p>Using an XNOR gate on the 7th bits to compare the sign of both integers, and XOR gates on bits 0-6 to compare the actual digits. Since the 7th bits are different and bits 0-6 are identical, the gates would all produce 0, which could be wired to an OR gate to display 0 as the difference.</p>
+      <br>
+      <h2>1.4:</h2>
+      <p>There are two: 0000 0000 and 1000 0000.</p>
+      <br>
+      <h2>1.5:</h2>
+      <p>No. Given a sum that exceeds the 6th bit, the final result would not show the correct answer due to the 7th bit being unintentionally altered by the carried 1.</p>
+      <br>
+      <h2>What did I learn? What is the "big idea"?</h2>
+      <p>I learned how to find complements of different numbers like ones', twos', nines', and tens'. The big idea of this exercise is to understand how these complements can be applied to subtract numbers in alternative ways.</p>
+      <br>
+      <h2>What challenges did I encounter?</h2>
+      <p>Understanding during the Merlin Mission that twos' complements are not the unaltered number,<sup><a href="#footnote1" id="reference1" title="i.e. the twos' complement of 1 being 1 + 1 + 1 - the carry, or 1">1</a></sup> but actually the ones' complement with an additional 1 appended with the least significant digit.</p>
+      <br>
+      <h2>How could this experience be improved?</h2>
+      <p>I think it would be highly vital to elaborate on how the knowledge of complements connects to encoding negative integers.</p>
+      <br>
+      <h2>Free Reflection: How has what I've learned affected my thinking?</h2>
+      <p>This lesson has helped me look for other methods of finding the difference between numbers by using different kinds of complements.</p>
+      <br>
+      <h2><a href="./J1018.html" title="SR Latch">Previous: J1018</a><span style="user-select: none"> - </span><a href="./J1089.html" title="Hello World">Next: J1089</a></h2>
+      <h2><a href="../index.html">Back</a></h2>
+      <hr>
+      <h2>Footnotes</h2>
+      <p><a href="#reference1" id="footnote1">1.</a> i.e. the twos' complement of 1 being 1 + 1 + 1 - the carry, or 1</p>
+      <div id="corner"><p>/www/Digital Portfolio/CS-I/Journals/J1032.html</p></div>
+    </div>
+  </body>
+</html>
