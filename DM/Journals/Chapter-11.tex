@@ -1,0 +1,169 @@
+\documentclass{article}
+\usepackage{mathtools, amsfonts, hyperref}
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage[parfill]{parskip}
+\title{Chapter 11 Homework}
+\author{Mohibullah Meer}
+\date{January 29, 2024}
+% paired delimiter
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\newcommand\true{\textcolor{ForestGreen}{\texttt{T}}}
+\newcommand\false{\textcolor{red}{\texttt{F}}}
+\begin{document}
+\maketitle
+\section*{11.1.:}
+\subsection*{11.1a: Convert the binary numeral $111001$ to decimal.}
+\[\begin{array}{|c||c|c|c|c|c|c|}
+\hline
+\cellcolor{black}&2^5&2^4&2^3&2^2&2^1&2^0\\
+\hline
+\#_2&1&1&1&0&0&1\\
+\hline
+\#_{10}&32&16&8&0&0&1\\
+\hline
+\end{array}\]
+\begin{align*}
+  111001_2&=32_{10}+16_{10}+8_{10}+1_{10}\\
+  111001_2&=57_{10}
+\end{align*}
+\subsection*{11.1b: Convert the decimal numeral $87$ to binary.}
+\[\begin{array}{|c|c||c|}
+\hline
+\#_{10}&\#_{10}/2&\textcolor{blue}{R}\\
+\hline
+87&0&1\\
+43&1&1\\
+21&2&1\\
+10&3&0\\
+5&4&1\\
+2&5&0\\
+1&6&1\\
+\hline
+\end{array}\]
+\[87_{10}=1010111_2\]
+\section*{11.3.}
+\subsection*{11.3a:}
+\subsection*{11.3b:}
+\subsection*{11.3c:}
+\subsection*{11.3d:}
+\subsection*{11.3e:}
+\section*{11.5. Let $p\downarrow q$ denote the "nor" operator:}
+\subsection*{11.5a: Write the truth table for $p\downarrow q$.}
+\[\begin{array}{|c|c||c|}
+\hline
+p&q&\textcolor{blue}{p\downarrow q}\\
+\hline
+\false&\false&\true\\
+\false&\true&\false\\
+\true&\false&\false\\
+\true&\true&\false\\
+\hline
+\end{array}\]
+\subsection*{11.5b: Using only the $\downarrow$ operator, write a formula equivalent to $\neg p$.}
+\[p\downarrow p\Leftrightarrow\neg p\]
+\[\begin{array}{|c||c|c|}
+\hline
+p&\textcolor{blue}{p\downarrow p}&\neg p\\
+\hline
+\false&\true&\true\\
+\true&\false&\false\\
+\hline
+\end{array}\]
+\subsection*{11.5c: Show that $\lor$ and $\land$ can also be expressed using just the $\downarrow$ operator.}
+\[(p\downarrow q)\downarrow(p\downarrow q)\Leftrightarrow p\lor q\]
+\[\begin{array}{|c|c||c|c||c|}
+\hline
+p&q&p\downarrow q&\textcolor{blue}{(p\downarrow q)\downarrow(p\downarrow q)}&p\lor q\\
+\hline
+\false&\false&\true&\false&\false\\
+\false&\true&\false&\true&\true\\
+\true&\false&\false&\true&\true\\
+\true&\true&\false&\true&\true\\
+\hline
+\end{array}\]
+\[(p\downarrow p)\downarrow(q\downarrow q)\Leftrightarrow p\land q\]
+\[\begin{array}{|c|c||c|c|c||c|}
+\hline
+p&q&p\downarrow p&q\downarrow q&\textcolor{blue}{(p\downarrow p)\downarrow(q\downarrow q)}&p\land q\\
+\hline
+\false&\false&\true&\true&\false&\false\\
+\false&\true&\true&\false&\false&\false\\
+\true&\false&\false&\true&\false&\false\\
+\true&\true&\false&\false&\true&\true\\
+\hline
+\end{array}\]
+\section*{11.7. Write the logical formulas for the values of $Z_0$, $Z_1$, and $C_{out}$ of the two bit adder, in terms of the inputs $X_0$, $Y_0$, $X_1$, and $Y_1$.}
+\begin{equation*}
+  Z_0=X_0\oplus Y_0
+\end{equation*}
+\begin{equation*}
+  Z_1=(X_0\land Y_0)\oplus(X_1\oplus Y_1)
+\end{equation*}
+\begin{equation*}
+  C_{out}=(X_1\land Y_1)\lor((X_0\land Y_0)\land(X_1\lor Y_1))
+\end{equation*}
+\[\begin{array}{|c|c|c|c||c|c|c|}
+\hline
+X_0&Y_0&X_1&Y_1&Z_0&Z_1&C_{out}\\
+\hline
+\false&\false&\false&\false&\false&\false&\false\\
+\false&\false&\false&\true&\false&\true&\false\\
+\false&\false&\true&\false&\false&\true&\false\\
+\false&\false&\true&\true&\false&\false&\true\\
+\false&\true&\false&\false&\true&\false&\false\\
+\false&\true&\false&\true&\true&\true&\false\\
+\false&\true&\true&\false&\true&\true&\false\\
+\false&\true&\true&\true&\true&\false&\true\\
+\true&\false&\false&\false&\true&\false&\false\\
+\true&\false&\false&\true&\true&\true&\false\\
+\true&\false&\true&\false&\true&\true&\false\\
+\true&\false&\true&\true&\true&\false&\true\\
+\true&\true&\false&\false&\false&\true&\false\\
+\true&\true&\false&\true&\false&\false&\true\\
+\true&\true&\true&\false&\false&\false&\true\\
+\true&\true&\true&\true&\false&\true&\true\\
+\hline
+\end{array}\]
+\section*{11.9. In terms of a 7-segment display:}
+\subsection*{11.9a: Write out the strokes that should be turned on to represent each of the remaining digits.}
+\begin{center}\begin{tabular}{|c||c|c|c|c|c|c|c|}
+    \hline
+    \#&A&B&C&D&E&F&G\\
+    \hline
+    0&\true&\true&\true&\false&\true&\true&\true\\
+    3&\true&\false&\true&\true&\false&\true&\true\\
+    4&\false&\true&\true&\true&\false&\true&\false\\
+    5&\true&\true&\false&\true&\false&\true&\true\\
+    6&\true&\true&\false&\true&\true&\true&\true\\
+    7&\true&\false&\true&\false&\false&\true&\false\\
+    9&\true&\true&\true&\true&\false&\true&\true\\
+    \hline
+\end{tabular}\end{center}
+\subsection*{11.9b: Write a truth table for the A segment and the binary representation of a number from 0-9.}
+\[\begin{array}{|c|c|c|c||c|}
+    \hline
+    2^3&2^2&2^1&2^0&\textcolor{blue}{\text{A}}\\
+    \hline
+    \false&\false&\false&\false&\true\\
+    \false&\false&\false&\true&\false\\
+    \false&\false&\true&\false&\true\\
+    \false&\false&\true&\true&\true\\
+    \false&\true&\false&\false&\false\\
+    \false&\true&\false&\true&\true\\
+    \false&\true&\true&\false&\true\\
+    \false&\true&\true&\true&\true\\
+    \true&\false&\false&\false&\true\\
+    \true&\false&\false&\true&\true\\
+    \hline
+\end{array}\]
+\subsection*{11.9c: Write a DNF formula for A based on the truth table from part (b).}
+\begin{gather*}
+  (\neg p_0\land\neg p_1\land\neg p_2\land\neg p_3)\lor(\neg p_0\land\neg p_1\land p_2\land\neg p_3)\lor(\neg p_0\land\neg p_1\land p_2\land p_3)\\\lor(\neg p_0\land p_1\land\neg p_2\land p_3)\lor(\neg p_0\land p_1\land p_2\land\neg p_3)\lor(\neg p_0\land p_1\land p_2\land p_3)\\\lor(p_0\land\neg p_1\land\neg p_2\land\neg p_3)\lor(p_0\land\neg p_1\land\neg p_2\land p_3)
+  \end{gather*}
+\subsection*{11.9d: Draw a logic circuit that implements the formula from part (c).}
+\textcolor{blue}{\underline{\href{http://tinyurl.com/yqdsyb2x}{7-segment 0-9 display.}}}
+\section*{11.11. Regarding the Thue sequence:}
+\subsection*{11.11a: Prove that $t_n$ is the exclusive or of the bits of the binary notation for $n$.}
+\subsection*{11.11b: Show that for every $n\geq0$, $t_{2n}=t_n$, and $t_{2n+1}$ is the complement of $t_n$.}
+\end{document}

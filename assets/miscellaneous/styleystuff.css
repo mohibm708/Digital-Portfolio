@@ -9,17 +9,11 @@ a:visited::selection {
     color: #000;
 }
 a:hover {
-    animation-duration: 0.5s;
-    animation-iteration-count: infinite;
-    animation-name: unclicked_flicker;
-    animation-timing-function: steps(1);
+    animation: 0.5s infinite unclicked_flicker steps(1);
     color: #FFF;
 }
 a:active {
-    animation-duration: 0.5s;
-    animation-iteration-count: infinite;
-    animation-name: clicked_flicker;
-    animation-timing-function: steps(1);
+    animation: 0.5s infinite clicked_flicker steps(1);
     color: #F00;
     cursor: grabbing;
 }
@@ -35,11 +29,7 @@ body {
     width: 78%;
 }
 .body {
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-    animation-name: startup;
-    animation-timing-function: steps(4);
+    animation: 0.5s forwards 1 startup steps(4);
     overflow-x: auto;
     padding-bottom: 2%;
 }
@@ -63,10 +53,7 @@ br {user-select: none;}
     color: #0F0;
 }
 .decor {
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-name: decor_flicker;
-    animation-timing-function: steps(1);
+    animation: 2s infinite decor_flicker steps(1);
 }
 .decor::selection {
     background-color: #0F0;
